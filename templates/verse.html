@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palabra en Sentimientos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <button id="theme-toggle" class="button">🌙</button>
+        <h2 class="tituloV">Versículo para el sentimiento de {{ feeling }}</h2>
+        <p class="versiculo">{{ verse }}</p>
+        <div class="share-buttons">
+            <a href="https://twitter.com/intent/tweet?text=Vers%C3%ADculo%20para%20el%20sentimiento%20de%20{{ feeling }}:%20{{ verse }}%20{{ url_for('show_verse', feeling=feeling, _external=True) }}" target="_blank" class="button share-button">
+                <i class="fab fa-twitter"></i> Compartir en Twitter
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ url_for('show_verse', feeling=feeling, _external=True) }}" target="_blank" class="button share-button">
+                <i class="fab fa-facebook-f"></i> Compartir en Facebook
+            </a>
+            <a href="mailto:?subject=Vers%C3%ADculo%20para%20el%20sentimiento%20de%20{{ feeling }}&body={{ verse }}%20{{ url_for('show_verse', feeling=feeling, _external=True) }}" class="button share-button">
+                <i class="fas fa-envelope"></i> Compartir por Email
+            </a>
+            <a href="{{ url_for('index') }}" class="button" style="color: red;">Volver</a>
+
+        </div>
+        
+        
+        <!-- Reproductor de SoundCloud -->
+        <div class="music-player">
+            <h3>Escucha para orar :</h3>
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1593429540&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/abrahan-macario-pagina-oficial" title="Abrahan Macario Oficial" target="_blank" style="color: #cccccc; text-decoration: none;">Abrahan Macario Oficial</a> · <a href="https://soundcloud.com/abrahan-macario-pagina-oficial/musica-cristiana-instrumental-a-solas-con-dios-musica-para-orar" title="🌌🙇🏻‍♂️Música Cristiana Instrumental / A Solas Con Dios / Música Para Orar" target="_blank" style="color: #cccccc; text-decoration: none;">🌌🙇🏻‍♂️Música Cristiana Instrumental / A Solas Con Dios / Música Para Orar</a></div>
+        </div>
+        <div class="prayer-section">
+            <h3>Oración poderosa</h3>
+            <p>
+                Querido Dios,<br><br>
+                Te agradezco profundamente por tu amor infinito y tu constante presencia en mi vida. En este momento, te pido que ilumines mi camino con tu sabiduría divina. Fortaléceme en los momentos de debilidad, dándome el coraje para enfrentar los desafíos y la paciencia para superar las pruebas que se presenten.<br><br>
+                Guíame en mis decisiones, grandes y pequeñas, y ayúdame a actuar con justicia y compasión en cada situación. Protege a mis seres queridos y a mí de todo mal, y bendice nuestras vidas con salud, paz y prosperidad.<br><br>
+                Concédenos la gracia para ser humildes en la abundancia y agradecidos en las dificultades. Que tu amor nos inspire a servir a los demás con generosidad y a vivir en armonía con tu voluntad. Renueva nuestra fe cada día y mantén nuestra esperanza viva, recordándonos siempre que tu plan para nosotros es de bienestar y no de mal.<br><br>
+                Te pido que nos des fortaleza para afrontar nuestras debilidades, sabiduría para tomar decisiones sabias, y discernimiento para seguir siempre el camino que tú has trazado para nosotros.<br><br>
+                En tus manos pongo todas mis preocupaciones y aspiraciones, confiando en que tu guía y tu gracia nos acompañarán siempre.<br><br>
+                Amén.
+            </p>
+        </div>
+        
+        
+        <h3>Escucha esta canción cristiana:</h3>
+        <div class="video-gallery">
+            <div class="video-item">
+                <h3>Alfarero -- Profeta Lirical // Letra</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/W5iRUT93px8?si=4aP6kXus5EWxBv0X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <h3>No tengas temor, con letra - Alex Zurdo</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/cBNK5nw3kzo?si=HwUusFm02BtiYh8N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <h3>Cada Día Oro Por ti - Tercer Cielo con letra</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zzu_DbSZorw?si=m63Wr71uZQQf2RAz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <h3>Vico C - Dándote Vida | Video Con Letra</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/u_PKnME6PbY?si=dK6WkeppZkXHEbNB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <h3>AMAZING GRACE- subtítulos en español</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/oOL1lyaEhek?si=_QOyb_AGEQ4zPO3J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <h3>CRISTO YO TE AMO - VINO NUEVO</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/LYho-yU5nkY?si=_qCiGK8vD4icwqcv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+       
+        
+        <a href="{{ url_for('index') }}" class="button" style="color: red;">Volver</a>
+
+    </div>
+
+    <script>
+
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            themeToggle.textContent = isDarkMode ? '🌞' : '🌙';
+        });
+    </script>
+</body>
+</html>
+

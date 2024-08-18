@@ -24,9 +24,34 @@
             <a href="{{ url_for('show_verse', feeling='culpa') }}" class="button"><i class="fas fa-gavel"></i> Culpa</a>
             <a href="{{ url_for('show_verse', feeling='amor') }}" class="button"><i class="fas fa-heart"></i> Amor</a>
         </div>
+        
         <div id="verse-display" class="verse-display">
             <p>"Salmos 23:1 - El Señor es mi pastor; nada me faltará."</p>
         </div>
+        <hr>
+        <p>Haz clic en el botón para leer las escrituras:</p>
+        <a href="{{ url_for('biblia') }}">
+            <button style="padding: 10px 20px; font-size: 16px;">Leer la Biblia</button>
+        </a>
+        <div class="bibliatodo">
+         
+            <div>
+                <h1>Versículo del Día</h1>
+                <iframe width="300px" scrolling="no" height="400px" frameborder="0" src="https://www.bibliatodo.com/es/online/versiculo-del-dia"></iframe>
+            </div>
+            
+            <div>
+                <h1>Imagen del Día</h1>
+                <iframe width="320" scrolling="no" height="350" frameborder="0" src="https://www.bibliatodo.com/es/online/imagendeldia"></iframe>
+            </div>
+            
+            <div>
+                <h1>Video del Día</h1>
+                <iframe width="320" scrolling="no" height="310" frameborder="0" src="https://www.bibliatodo.com/es/online/videodeldia"></iframe>
+            </div>
+        </div>
+        
+        <h1>Galeria de imagenes</h1>
         <div class="gallery">
             <img src="{{ url_for('static', filename='images/image1.jpg') }}" alt="Imagen 1" onclick="showLargeImage(this.src)">
             <img src="{{ url_for('static', filename='images/image2.jpg') }}" alt="Imagen 2" onclick="showLargeImage(this.src)">
@@ -48,6 +73,8 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modal-image">
     </div>
+
+    
 
     <script>
         function showLargeImage(src) {

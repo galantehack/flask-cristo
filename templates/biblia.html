@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palabra en Sentimientos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <button id="theme-toggle" class="button">🌙</button>
+        <h1 class="titulo">¿Cual es tu sentimiento el dia de hoy?</h1>
+        <p class="subtitulo">Encuentra inspiración y consuelo en las Escrituras</p>
+        <div class="buttons">
+            <a href="{{ url_for('show_verse', feeling='feliz') }}" class="button"><i class="fas fa-smile"></i> Feliz</a>
+            <a href="{{ url_for('show_verse', feeling='triste') }}" class="button"><i class="fas fa-sad-tear"></i> Triste</a>
+            <a href="{{ url_for('show_verse', feeling='ansioso') }}" class="button"><i class="fas fa-angry"></i> Enojo</a>
+            <a href="{{ url_for('show_verse', feeling='miedo') }}" class="button"><i class="fas fa-exclamation-triangle"></i> Miedo</a>
+            <a href="{{ url_for('show_verse', feeling='confianza') }}" class="button"><i class="fas fa-handshake"></i> Confianza</a>
+            <a href="{{ url_for('show_verse', feeling='verguenza') }}" class="button"><i class="fas fa-flushed"></i> Vergüenza</a>
+            <a href="{{ url_for('show_verse', feeling='culpa') }}" class="button"><i class="fas fa-gavel"></i> Culpa</a>
+            <a href="{{ url_for('show_verse', feeling='amor') }}" class="button"><i class="fas fa-heart"></i> Amor</a>
+        </div>
+        
+        <div id="verse-display" class="verse-display">
+            <p>"Salmos 23:1 - El Señor es mi pastor; nada me faltará."</p>
+        </div>
+        <div>
+            <h1>Lee las escrituras</h1>
+            <object data="{{ url_for('static', filename='biblia/biblia.pdf') }}" type="application/pdf" width="100%" height="600px">
+                <iframe src="https://docs.google.com/viewer?url={{ url_for('static', filename='biblia/biblia.pdf') }}&embedded=true" width="100%" height="600px"></iframe>
+            </object>
+        </div>
+        
+        
+        
+        
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    
+
+    <script>
+        function showLargeImage(src) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modal-image");
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            themeToggle.textContent = isDarkMode ? '🌞' : '🌙';
+        });
+    </script>
+    <script>
+        const verses = [
+    "Salmos 23:1 - El Señor es mi pastor; nada me faltará.",
+    "Filipenses 4:13 - Todo lo puedo en Cristo que me fortalece.",
+    "Juan 14:27 - La paz os dejo, mi paz os doy.",
+    "Jeremías 29:11 - Porque yo sé los planes que tengo para vosotros, dice el Señor, planes de bienestar y no de mal, para daros un futuro y una esperanza.",
+    "Isaías 41:10 - No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.",
+    "Proverbios 3:5-6 - Fíate de Jehová de todo tu corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él enderezará tus veredas.",
+    "Romanos 8:28 - Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien.",
+    "Salmos 46:1 - Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",
+    "Mateo 11:28-30 - Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar. Llevad mi yugo sobre vosotros, y aprended de mí, que soy manso y humilde de corazón; y hallaréis descanso para vuestras almas.",
+    "2 Timoteo 1:7 - Porque no nos ha dado Dios espíritu de cobardía, sino de poder, de amor y de dominio propio.",
+    "Filipenses 4:6-7 - Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración y ruego, con acción de gracias. Y la paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones y vuestros pensamientos en Cristo Jesús.",
+    "Salmos 27:1 - El Señor es mi luz y mi salvación; ¿de quién temeré? El Señor es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
+    "Josué 1:9 - Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+    "Salmos 55:22 - Echa sobre Jehová tu carga, y él te sustentará; no dejará para siempre caído al justo.",
+    "Hebreos 13:5 - Sea vuestra conducta sin avaricia, contentos con lo que tenéis ahora; porque él dijo: No te desampararé, ni te dejaré.",
+    "Isaías 40:31 - Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como las águilas; correrán, y no se cansarán; caminarán, y no se fatigarán.",
+    "1 Corintios 16:13 - Velad, estad firmes en la fe; portaos varonilmente, y esforzaos.",
+    "Salmos 37:4 - Deléitate asimismo en Jehová, y él te concederá las peticiones de tu corazón."
+];
+function displayRandomVerse() {
+    const i = Math.floor(Math.random() * verses.length);
+    document.getElementById("verse-display").innerHTML = `<p>${verses[i]}</p>`;
+}
+
+// Mostrar un versículo aleatorio al cargar la página
+displayRandomVerse();
+
+// Actualizar el versículo cada 30 segundos (30000 milisegundos)
+setInterval(displayRandomVerse, 15000);
+    </script>
+</body>
+</html>

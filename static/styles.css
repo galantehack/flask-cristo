@@ -1,10 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    
     color: #333;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #f3e7e9, #e3eeff);
+    background: linear-gradient(to bottom, #f3e7e96c, #e3eeff);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -177,4 +177,29 @@ body.dark-mode .modal {
 
 .trivia-result p {
     margin: 5px 0;
+}
+
+
+.bibliatodo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.bibliatodo > div {
+    flex: 1 1 300px;
+    box-sizing: border-box;
+}
+
+.bibliatodo iframe {
+    width: 100%;
+    border: none;
+}
+
+hr {
+    border: none;
+    border-top: 5px solid #c2cde0; /* Cambia el color y grosor según necesites */
+    margin-bottom: 20px; /* Ajusta el espacio debajo de la línea */
 }

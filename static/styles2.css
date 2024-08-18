@@ -1,11 +1,11 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    
     color: #333;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #f3e7e9, #e3eeff);
+    background: linear-gradient(to bottom, #f3e7e96c, #e3eeff);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -15,6 +15,7 @@ body {
     padding: 20px;
     text-align: center;
     background: url(img_tree.gif) left top no-repeat, url(img_flwr.gif) right bottom no-repeat,  left top repeat;
+    
 }
 
 .tituloV {
@@ -39,12 +40,14 @@ body {
     font-family: 'Arial', sans-serif; /* Fuente más legible para el versículo */
     color: #333; /* Color del texto más oscuro para mejor contraste */
     transition: transform 0.3s ease; /* Animación de transición */
+    
 }
 
 .versiculo:hover {
     transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
     background: #e0f3ff; /* Cambio sutil de color en el hover */
     border-color: #0056b3; /* Cambio de color del borde en el hover */
+    
 }
 
 

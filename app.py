@@ -1,5 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import random
+import datetime
+import requests
+
 
 app = Flask(__name__)
 
@@ -189,6 +192,8 @@ verses = {
 
 }
 
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -199,6 +204,13 @@ def show_verse(feeling):
         verse = random.choice(verses[feeling])
         return render_template('verse.html', verse=verse, feeling=feeling)
     return redirect(url_for('index'))
+
+@app.route('/biblia')
+def biblia():
+    return render_template('biblia.html')
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

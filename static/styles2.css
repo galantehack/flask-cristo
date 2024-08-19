@@ -127,12 +127,26 @@ body {
 
 /* Estilos para el modo oscuro */
 body.dark-mode {
-    background-color: #333333;
-    color: #0e0c0c;
+    color: #ffffff;
+    background: linear-gradient(180deg, #000000, #333333), 
+                url("{{ url_for('static', filename='images/fondocristo.jpg') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+body.dark-mode .container .prayer-section {
+    background: linear-gradient(180deg, #222222, #555555); /* Degradado de gris oscuro */
+    color: #ffffff; /* Color del texto */
+    padding: 20px; /* Ajusta el espacio interno de la sección */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
 }
 
+
 body.dark-mode .container {
-    background-color: #444444; /* Color de fondo del contenedor en modo oscuro */
+    background: linear-gradient(180deg, #000000, #333333); /* Degradado de negro a gris oscuro */
+    color: #ddd; /* Color del texto para que sea visible en el fondo oscuro */
 }
 
 body.dark-mode .button {

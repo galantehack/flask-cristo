@@ -25,7 +25,13 @@
             <a href="{{ url_for('index') }}" class="button" style="color: red;">Volver</a>
 
         </div>
+        <p>Haz clic en el botón para leer las escrituras:</p>
+        <button onclick="document.getElementById('pdf-viewer').style.display='block'" style="padding: 10px 20px; font-size: 16px;">
+            <i class="fas fa-book"></i> Leer la Biblia</button>
         
+        <div id="pdf-viewer" style="display: none; margin-top: 20px;">
+            <embed src="{{ url_for('static', filename='biblia/biblia.pdf') }}" type="application/pdf" width="100%" height="600px" />
+        </div>
         
         <!-- Reproductor de SoundCloud -->
         <div class="music-player">

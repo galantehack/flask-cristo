@@ -210,3 +210,62 @@ hr {
     border-top: 5px solid #c2cde0; /* Cambia el color y grosor según necesites */
     margin-bottom: 20px; /* Ajusta el espacio debajo de la línea */
 }
+
+/* Media Queries para Dispositivos Móviles */
+@media (max-width: 768px) {
+    .tituloV {
+        font-size: 1.8em;
+    }
+
+    .versiculo {
+        padding: 10px;
+        background-size: 40px, 100px, auto;
+    }
+
+    .titulo {
+        font-size: 1.8em;
+        padding: 10px;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .gallery img {
+        max-width: 150px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tituloV {
+        font-size: 1.5em;
+    }
+
+    .versiculo {
+        padding: 8px;
+        background-size: 30px, 80px, auto;
+    }
+
+    .titulo {
+        font-size: 1.5em;
+        padding: 8px;
+    }
+
+    .button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .gallery img {
+        max-width: 120px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}

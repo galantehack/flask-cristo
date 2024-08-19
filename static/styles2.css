@@ -182,3 +182,56 @@ body.dark-mode .modal {
     line-height: 1.6;
 }
 
+/* Media Queries para Dispositivos Móviles */
+@media (max-width: 768px) {
+    .tituloV {
+        font-size: 2em;
+    }
+
+    .versiculo {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    .button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .video-item iframe {
+        height: 150px;
+    }
+
+    .music-player iframe {
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tituloV {
+        font-size: 1.5em;
+    }
+
+    .versiculo {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    .button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .video-item iframe {
+        height: 120px;
+    }
+
+    .music-player iframe {
+        height: 60px;
+    }
+
+    .share-button {
+        padding: 8px 10px;
+        font-size: 0.8em;
+    }
+}

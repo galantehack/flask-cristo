@@ -51,31 +51,70 @@ body {
 h1, h2 {
     color: #2c3e50;
 }
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.button {
+.button2 {
     display: inline-block;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 0 auto;
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+    text-align: center;
+    font-size: 1em;
     transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaciado entre botones */
 }
 
+.button {
+    display: flex;
+    flex-direction: column; /* Imagen arriba, texto abajo */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 120px;
+    height: 140px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.button img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin-bottom: 5px;
+}
 
 .button:hover {
-    background-color: #f39c12;
     transform: scale(1.05);
-    transition: all 0.3s ease;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
 }
+
+.button:hover img {
+    transform: scale(1.1);
+}
+
+.button span {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
 
 .gallery {
     display: flex;
